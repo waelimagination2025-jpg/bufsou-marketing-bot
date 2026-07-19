@@ -61,3 +61,12 @@ def run_elite_quad_video_pipeline():
 
 if __name__ == "__main__":
     run_elite_quad_video_pipeline()
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SLVG9KJG8H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SLVG9KJG8H');
+</script>
