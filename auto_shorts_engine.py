@@ -8,6 +8,7 @@ import edge_tts
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 PEXELS_API_KEY = os.getenv("PEXELS_API_KEY")
 
+# إطلاق العميل النقي بدون أي بارامترات proxies قديمة لعام 2026
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 async def run_elite_quad_video_pipeline():
@@ -36,7 +37,7 @@ async def run_elite_quad_video_pipeline():
     with open("raw_scene.mp4", "wb") as f:
         f.write(video_data)
         
-    print("[SUCCESS] 🏆 تم معالجة ورندرة Matures بـ FFmpeg وحقن الكابشنز بنجاح باهر!")
+    print("[SUCCESS] 🏆 تم معالجة ورندرة المقطع بـ FFmpeg وحقن الكابشنز بنجاح باهر!")
     print("[OMNI-PUBLISH] 🔥 بدء القذف التلقائي للمقطع داخل المنصات حياً وبنفس الثانية...")
     
     platforms = [
