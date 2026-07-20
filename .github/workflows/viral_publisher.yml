@@ -1,18 +1,18 @@
 name: BUFSOU Omni-Channel Autopilot Engine
 on:
   schedule:
-    - cron: '0 */6 * * *' # الجدولة الزمنية التلقائية كل 6 ساعات مدى الحياة
-  workflow_dispatch: # إمكانية التشغيل الفوري اليدوي بضغطة زر ليرتاح قلبك وعقلك التجاري
+    - cron: '0 */6 * * *' 
+  workflow_dispatch: 
 
 jobs:
   omni-build-and-deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Code Base
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Python Runtime
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
 
