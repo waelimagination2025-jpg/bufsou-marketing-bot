@@ -1,0 +1,28 @@
+name: BUFSOU Omni-Channel Autopilot Engine
+on:
+  schedule:
+    - cron: '0 */6 * * *' # الجدولة الزمنية التلقائية كل 6 ساعات مدى الحياة
+  workflow_dispatch: # إمكانية التشغيل الفوري اليدوي بضغطة زر ليرتاح قلبك وعقلك التجاري
+
+jobs:
+  omni-build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code Base
+      uses: actions/checkout@v3
+
+    - name: Set up Python Runtime
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install System Utilities & FFmpeg
+      run: |
+        pip install -r requirements.txt
+        sudo apt-get update && sudo apt-get install -y ffmpeg
+
+    - name: Execute Autonomous Omni-Channel Pipeline
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+      run: python auto_shorts_engine.py
