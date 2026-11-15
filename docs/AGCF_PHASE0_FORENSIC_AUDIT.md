@@ -190,3 +190,17 @@ Evidence is the GitHub repository metadata, complete non-truncated recursive tre
 This audit did not authenticate to the live storefront, inspect a separate hosting account, test live API credentials, run a production transaction, contact suppliers, or verify external payment eligibility.
 
 **Final status:** `VERIFIED-REPO` for the inspected repository structure and source defects; `NOT FOUND` for commerce components in that tree; `UNKNOWN` for any separate deployed website or external infrastructure; `NOT READY` for verified live commerce.
+
+## 13. Subsequent live deployment discovery (2026-11-15)
+
+A live landing page was subsequently identified at https://bufsou-atelier-store.vercel.app/ . This is the URL hardcoded in the existing `.github/workflows/main.yml` environment configuration.
+
+The page is outside the inspected Git tree: no corresponding frontend source, build configuration, or backend is present in this repository's complete recursive tree. A separate live-site audit is recorded in `docs/AGCF_LIVE_STOREFRONT_FORENSIC_AUDIT.md`.
+
+The live page is visually developed but its observed purchase flow is not a functioning server-side checkout: the CTA scrolls to a form, browser JavaScript stores submitted customer/order data in localStorage, and a countdown redirects to the Payoneer homepage. No payment session, payment webhook, backend order record, supplier order API, or tracking integration was identified in the inspected flow.
+
+Accordingly, update the project-level conclusion:
+- A live BUFSOU marketing/landing page exists: VERIFIED-LIVE.
+- The landing page source/deployment project is not present in this repository tree: NOT FOUND HERE.
+- End-to-end commerce readiness remains NOT READY.
+- The separate Vercel project/source linkage is UNKNOWN until inspected through the owner's Vercel account.
